@@ -41,6 +41,7 @@
     openssl rsa -in jwt-private.pem -outform PEM -pubout -out jwt-public.pem
 
 ##### 5) Запустить контейнеры через Makefile (установить make, если нет в системе)
+##### Перезапустить контейнер приложение, если не увидел сразу контейнер с БД
 
     make dev_up
 
