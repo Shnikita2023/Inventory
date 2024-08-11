@@ -19,3 +19,11 @@ dev_down:
 .PHONE: run_test
 run_test:
 	${EXEC} ${APP_CONTAINER} sh -c "cd src && pytest -v"
+
+.PHONE: create_superuser
+create_superuser:
+	${EXEC} ${APP_CONTAINER} sh -c "cd src && python manage.py createsuperuser"
+
+.PHONE: run_migrate
+run_migrate:
+	${EXEC} ${APP_CONTAINER} sh -c "cd src && python manage.py makemigrations && python manage.py migrate"
