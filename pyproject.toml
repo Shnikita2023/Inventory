@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "account"
+version = "0.1.0"
+description = ""
+authors = ["Никита Швейцер <shveitcer2023@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1"
+djangorestframework = "^3.15.2"
+python-decouple = "^3.8"
+psycopg2-binary = "^2.9.9"
+djangorestframework-simplejwt = { extras = ["crypto"], version = "^5.3.1" }
+drf-yasg = { extras = ["validation"], version = "^1.21.7" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^4.4.6"
+pytest = "^8.3.2"
+pytest-django = "^4.8.0"
+flake8 = "^7.0.0"
+flake8-bugbear = "^24.4.21"
+flake8-builtins = "^2.5.0"
+pep8-naming = "^0.13.3"
+flake8-commas = "^2.1.0"
+flake8-variables-names = "^0.0.6"
+flake8-import-order = "^0.18.2"
+black = "^24.8.0"
+isort = "^5.13.2"
+
+[tool.black]
+line-length = 120
+extend-exclude = "docker_compose/, src/tests/, src/certs, src/apps/users/migrations/, src/apps/inventory/migrations/"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+skip_gitignore = true
+skip_glob = [
+    "docker_compose/*",
+    "src/tests/*",
+    "src/certs/*",
+    "src/apps/users/migrations/*",
+    "src/apps/inventory/migrations/*",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"

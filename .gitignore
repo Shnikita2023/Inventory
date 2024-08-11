@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+.mypy_cache/
+docker_compose/postgres-data
+.pytest_cache/
+.env
+src/certs/
