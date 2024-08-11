@@ -32,7 +32,7 @@
 
     https://docs.docker.com/engine/install/
 
-##### 4) В корневом каталоге проекта(src), создать папку certs и сгенерировать себе ключи
+##### 4) В корневом каталоге проекта(src), создать папку certs и сгенерировать себе ключи (должен быть openssl)
 
     # Generate an RSA private key, of sizw 2048
     openssl genrsa -out jwt-private.pem 2048
